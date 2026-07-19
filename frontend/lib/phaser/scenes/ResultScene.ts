@@ -13,8 +13,8 @@ export default class ResultScene extends Phaser.Scene {
   private success!: boolean;
   private timeRemaining!: number;
   private hintsUsed!: number;
-  private placedCount: number;
-  private totalSymptoms: number;
+  private placedCount!: number;
+  private totalSymptoms!: number;
 
   constructor() {
     super({ key: "ResultScene" });
