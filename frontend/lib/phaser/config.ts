@@ -25,7 +25,7 @@ export function createPhaserConfig(
     },
     physics: { default: "arcade" },
     input: {
-      dragDistanceThreshold: 4,
+      // dragDistanceThreshold: 4,
     },
     // Pass levelId to first scene via registry
     callbacks: {

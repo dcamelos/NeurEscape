@@ -91,6 +91,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.input.dragDistanceThreshold = 4;
     const { width, height } = this.scale;
     this.drawBackground(width, height);
     this.drawHUD(width, height);
