@@ -1,0 +1,212 @@
+{
+  "level_id": "level_01",
+  "title": "El caso de la memoria perdida",
+  "subtitle": "Síndrome Neurológico Desconocido — Sala de Urgencias",
+  "time_pressure_seconds": 600,
+  "hints_available": 3,
+
+  "narrative": {
+    "intro": "Es martes a las 3 AM. Te llaman a urgencias: paciente de 42 años ingresa confundido, incapaz de recordar dónde está ni qué hizo hace 10 minutos. Sus familiares describen cambios en su personalidad desde hace semanas. Necesitas localizar la lesión antes de que el neurólogo llegue. Tienes 10 minutos.",
+    "rooms": [
+      {
+        "id": "sala_triaje",
+        "label": "Sala de Triaje",
+        "clue": "El paciente no puede recordar el nombre del médico que le atendió hace 5 minutos, pero recuerda perfectamente su infancia."
+      },
+      {
+        "id": "sala_neurologia",
+        "label": "Sala de Neurología",
+        "clue": "Las imágenes de RMN muestran actividad anormal en la región medial del lóbulo temporal."
+      },
+      {
+        "id": "sala_resultados",
+        "label": "Sala de Resultados",
+        "clue": "El paciente falla sistemáticamente en tareas de planificación secuencial pero su lenguaje está intacto."
+      }
+    ],
+    "outro_success": "Diagnóstico correcto. El neurólogo confirma tu localización. El paciente recibirá tratamiento a tiempo.",
+    "outro_failure": "El tiempo se agotó. Revisa los síntomas y vuelve a intentarlo — cada error es aprendizaje."
+  },
+
+  "regions": [
+    {
+      "id": "corteza_prefrontal",
+      "label": "Corteza Prefrontal",
+      "abbreviation": "CPF",
+      "color": "#4A90D9",
+      "clinical_note": "Lesiones generan síndrome disejecutivo: pérdida de planificación, control inhibitorio y toma de decisiones.",
+      "svg_zone": "frontal"
+    },
+    {
+      "id": "hipocampo",
+      "label": "Hipocampo",
+      "abbreviation": "HPC",
+      "color": "#7B68EE",
+      "clinical_note": "Lesiones generan amnesia anterógrada: incapacidad de formar nuevos recuerdos, memoria episódica reciente afectada.",
+      "svg_zone": "temporal_medial"
+    },
+    {
+      "id": "lobulo_temporal",
+      "label": "Lóbulo Temporal",
+      "abbreviation": "LT",
+      "color": "#E8A838",
+      "clinical_note": "Lesiones en giro fusiforme generan prosopagnosia. Área de Wernicke: comprensión del lenguaje.",
+      "svg_zone": "temporal"
+    },
+    {
+      "id": "lobulo_parietal",
+      "label": "Lóbulo Parietal",
+      "abbreviation": "LP",
+      "color": "#5CB85C",
+      "clinical_note": "Lesiones generan síndrome de negligencia hemisférica y déficits en orientación espacial e integración sensorial.",
+      "svg_zone": "parietal"
+    },
+    {
+      "id": "corteza_occipital",
+      "label": "Corteza Occipital",
+      "abbreviation": "COC",
+      "color": "#D9534F",
+      "clinical_note": "Lesiones generan agnosia visual: incapacidad de reconocer objetos a pesar de percibir el estímulo.",
+      "svg_zone": "occipital"
+    }
+  ],
+
+  "symptoms": [
+    {
+      "id": "memoria_corto_plazo",
+      "label": "No recuerda eventos de hace 5 minutos",
+      "correct_region": "hipocampo",
+      "distractor_regions": ["corteza_prefrontal", "lobulo_temporal"],
+      "hints": [
+        "Este síntoma afecta la memoria reciente, no la remota — busca en el sistema límbico.",
+        "La estructura responsable de consolidar nuevos recuerdos está en el lóbulo temporal medial.",
+        "Es el hipocampo — encargado de la memoria episódica y la consolidación a largo plazo."
+      ],
+      "error_feedback": {
+        "corteza_prefrontal": "La corteza prefrontal gestiona planificación y control ejecutivo, no la consolidación de memorias recientes. Los déficits de memoria episódica señalan al sistema límbico.",
+        "lobulo_temporal": "El lóbulo temporal lateral procesa lenguaje y reconocimiento semántico. La memoria episódica reciente depende del hipocampo, en la región temporal medial.",
+        "lobulo_parietal": "El lóbulo parietal integra información sensorial y espacial. No está implicado en la consolidación de nuevos recuerdos.",
+        "corteza_occipital": "La corteza occipital procesa información visual. La pérdida de memoria episódica reciente no tiene origen aquí."
+      }
+    },
+    {
+      "id": "dificultad_planificacion",
+      "label": "No puede organizar pasos para una tarea simple",
+      "correct_region": "corteza_prefrontal",
+      "distractor_regions": ["hipocampo", "lobulo_parietal"],
+      "hints": [
+        "Este síntoma afecta las funciones ejecutivas — las más altas del procesamiento cognitivo.",
+        "Las funciones ejecutivas residen en la región anterior del cerebro, justo detrás de la frente.",
+        "Es la corteza prefrontal — sede de la planificación, control inhibitorio y toma de decisiones."
+      ],
+      "error_feedback": {
+        "hipocampo": "El hipocampo consolida memorias, no planifica secuencias de acción. Las dificultades de planificación apuntan a un déficit ejecutivo frontal.",
+        "lobulo_parietal": "El lóbulo parietal integra señales sensoriales y espaciales. La planificación secuencial es una función ejecutiva de la corteza prefrontal.",
+        "lobulo_temporal": "El lóbulo temporal procesa lenguaje y reconocimiento. Las dificultades de organización y planificación son características del síndrome disejecutivo frontal.",
+        "corteza_occipital": "La corteza occipital es responsable del procesamiento visual primario, no de las funciones ejecutivas."
+      }
+    },
+    {
+      "id": "no_reconoce_rostros",
+      "label": "No reconoce rostros familiares",
+      "correct_region": "lobulo_temporal",
+      "distractor_regions": ["corteza_occipital", "lobulo_parietal"],
+      "hints": [
+        "El paciente ve los rostros con claridad pero no los reconoce — el problema es de reconocimiento, no de percepción.",
+        "El área especializada en reconocer rostros está en la parte inferior del lóbulo temporal.",
+        "Es el giro fusiforme del lóbulo temporal — su lesión causa prosopagnosia."
+      ],
+      "error_feedback": {
+        "corteza_occipital": "La corteza occipital procesa la percepción visual básica. Si el paciente ve el rostro pero no lo reconoce, el problema es de reconocimiento, no de percepción — apunta al giro fusiforme temporal.",
+        "lobulo_parietal": "El lóbulo parietal procesa la localización espacial de los objetos, no su identidad. El reconocimiento de rostros depende del área fusiforme en el lóbulo temporal.",
+        "hipocampo": "El hipocampo consolida recuerdos pero no procesa el reconocimiento visual de rostros en tiempo real. La prosopagnosia tiene origen en el giro fusiforme temporal.",
+        "corteza_prefrontal": "La corteza prefrontal supervisa decisiones y planificación. El reconocimiento de rostros es una función del lóbulo temporal inferior."
+      }
+    },
+    {
+      "id": "desorientacion_espacial",
+      "label": "Se pierde en espacios conocidos",
+      "correct_region": "lobulo_parietal",
+      "distractor_regions": ["hipocampo", "corteza_prefrontal"],
+      "hints": [
+        "El paciente sabe dónde quiere ir pero no puede orientarse en el espacio — el mapa mental falla.",
+        "La integración de información espacial y sensorial ocurre en la región posterior superior del cerebro.",
+        "Es el lóbulo parietal — integra señales sensoriales para construir la representación espacial del entorno."
+      ],
+      "error_feedback": {
+        "hipocampo": "El hipocampo contribuye a la memoria espacial, pero la desorientación en espacios conocidos con información disponible indica un déficit de integración sensorial parietal, no de memoria.",
+        "corteza_prefrontal": "La corteza prefrontal planifica y decide, pero no construye el mapa espacial del entorno. La orientación visuoespacial depende del lóbulo parietal.",
+        "lobulo_temporal": "El lóbulo temporal procesa lenguaje e identidades visuales. La orientación espacial activa en tiempo real es función del lóbulo parietal.",
+        "corteza_occipital": "La corteza occipital recibe la señal visual pero no integra información espacial para la navegación. Eso corresponde al lóbulo parietal."
+      }
+    },
+    {
+      "id": "agnosia_objetos",
+      "label": "No reconoce objetos al verlos pero sí al tocarlos",
+      "correct_region": "corteza_occipital",
+      "distractor_regions": ["lobulo_temporal", "lobulo_parietal"],
+      "hints": [
+        "El paciente percibe el objeto visualmente pero su cerebro no puede interpretarlo — el problema es en la vía visual.",
+        "La región que procesa e interpreta la información visual recibida por los ojos está en la parte posterior del cráneo.",
+        "Es la corteza occipital — lesiones en las áreas de asociación visual generan agnosia visual."
+      ],
+      "error_feedback": {
+        "lobulo_temporal": "El lóbulo temporal procesa identidades de objetos conocidos (vía ventral), pero la agnosia visual con percepción conservada sugiere un fallo en el procesamiento visual primario de la corteza occipital.",
+        "lobulo_parietal": "El lóbulo parietal procesa dónde está el objeto (vía dorsal), no qué es. La incapacidad de reconocer objetos visualmente con tacto preservado apunta a la corteza occipital.",
+        "hipocampo": "El hipocampo no procesa información visual en tiempo real. La agnosia visual sin déficit táctil indica un fallo en las áreas de asociación de la corteza occipital.",
+        "corteza_prefrontal": "La corteza prefrontal no interpreta señales visuales. El reconocimiento visual de objetos depende de la corteza occipital y la vía ventral temporal."
+      }
+    },
+    {
+      "id": "cambio_personalidad",
+      "label": "Cambios bruscos de comportamiento e impulsividad",
+      "correct_region": "corteza_prefrontal",
+      "distractor_regions": ["lobulo_temporal", "hipocampo"],
+      "hints": [
+        "El control del comportamiento social y emocional es una función ejecutiva de alto nivel.",
+        "La inhibición de impulsos y la regulación del comportamiento social residen en la parte anterior del cerebro.",
+        "Es la corteza prefrontal ventromedial — lesiones producen desinhibición, impulsividad y cambios de personalidad."
+      ],
+      "error_feedback": {
+        "lobulo_temporal": "El lóbulo temporal puede afectar la regulación emocional en lesiones del sistema límbico lateral, pero la desinhibición e impulsividad como síntoma principal apuntan al córtex prefrontal ventromedial.",
+        "hipocampo": "El hipocampo forma memorias pero no regula el comportamiento social ni el control de impulsos. Los cambios de personalidad por desinhibición son característicos del daño prefrontal.",
+        "lobulo_parietal": "El lóbulo parietal procesa información sensorial y espacial. Los cambios de personalidad e impulsividad son signos de disfunción prefrontal.",
+        "corteza_occipital": "La corteza occipital procesa información visual. Los cambios conductuales y la desinhibición son síntomas frontales."
+      }
+    },
+    {
+      "id": "dificultad_lenguaje_comprension",
+      "label": "Entiende palabras sueltas pero no oraciones completas",
+      "correct_region": "lobulo_temporal",
+      "distractor_regions": ["corteza_prefrontal", "corteza_occipital"],
+      "hints": [
+        "El problema es de comprensión del lenguaje, no de producción — el paciente habla pero no entiende.",
+        "El área de comprensión del lenguaje está en el lóbulo temporal posterior del hemisferio dominante.",
+        "Es el área de Wernicke en el lóbulo temporal — su lesión produce afasia de Wernicke (comprensión afectada, fluencia preservada)."
+      ],
+      "error_feedback": {
+        "corteza_prefrontal": "La corteza prefrontal no procesa el lenguaje directamente. El área de Broca (producción) está en el lóbulo frontal inferior, pero la comprensión del lenguaje depende del área de Wernicke en el lóbulo temporal.",
+        "corteza_occipital": "La corteza occipital procesa información visual. La comprensión del lenguaje auditivo es función del área de Wernicke, en el lóbulo temporal posterior.",
+        "hipocampo": "El hipocampo no procesa lenguaje. La comprensión sintáctica del habla depende del lóbulo temporal, específicamente el área de Wernicke.",
+        "lobulo_parietal": "El lóbulo parietal participa en el procesamiento ortográfico pero no en la comprensión auditiva del lenguaje. Eso corresponde al área de Wernicke en el lóbulo temporal."
+      }
+    },
+    {
+      "id": "perdida_vision_periferica",
+      "label": "Pérdida de campo visual en un lado sin lesión ocular",
+      "correct_region": "corteza_occipital",
+      "distractor_regions": ["lobulo_parietal", "lobulo_temporal"],
+      "hints": [
+        "Los ojos están sanos — el problema está en cómo el cerebro procesa la señal visual que recibe.",
+        "La corteza que recibe y procesa la señal de los ojos está en el polo posterior del cerebro.",
+        "Es la corteza occipital primaria (área V1) — lesiones unilaterales causan hemianopsia homónima."
+      ],
+      "error_feedback": {
+        "lobulo_parietal": "El lóbulo parietal procesa la localización espacial de los estímulos visuales (vía dorsal), pero la pérdida de campo visual por lesión cerebral sin patología ocular indica daño en la corteza visual primaria occipital.",
+        "lobulo_temporal": "El lóbulo temporal procesa el reconocimiento de objetos (vía ventral). La hemianopsia homónima por daño cerebral sin lesión ocular indica un problema en la corteza occipital primaria.",
+        "hipocampo": "El hipocampo no procesa información visual perceptual. La pérdida de campo visual de origen central corresponde a la corteza occipital.",
+        "corteza_prefrontal": "La corteza prefrontal no procesa señales visuales primarias. La hemianopsia sin daño ocular indica lesión en la corteza visual occipital."
+      }
+    }
+  ]
+}
