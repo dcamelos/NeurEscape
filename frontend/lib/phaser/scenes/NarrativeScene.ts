@@ -8,7 +8,7 @@ import { getSessionId } from "@/lib/analytics/sessionManager";
  */
 export default class NarrativeScene extends Phaser.Scene {
   private levelData: any;
-  private levelId: string;
+  private levelId!: string;
 
   constructor() {
     super({ key: "NarrativeScene" });
