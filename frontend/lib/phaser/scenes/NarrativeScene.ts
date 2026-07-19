@@ -7,7 +7,7 @@ import { getSessionId } from "@/lib/analytics/sessionManager";
  * EDTF (Maxim, 2025): El arco de tensión se intensifica con elementos visuales dinámicos.
  */
 export default class NarrativeScene extends Phaser.Scene {
-  private levelData: any;
+  private levelData!: any;
   private levelId!: string;
 
   constructor() {
