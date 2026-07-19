@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #1b3a5c;
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-text: #e6edf3;
+  --color-text-muted: #8b949e;
+  --color-success: #1d9e75;
+  --color-error: #d9534f;
+  --color-warning: #e8a838;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Phaser canvas container */
+#phaser-container canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Session ID badge */
+.session-badge {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
