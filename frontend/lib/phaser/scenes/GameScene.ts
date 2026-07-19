@@ -36,8 +36,8 @@ interface DragCard {
  * Incluye feedback predictivo en tiempo real y layout visual optimizado.
  */
 export default class GameScene extends Phaser.Scene {
-  private levelData: any;
-  private levelId: string;
+  private levelData!: any;
+  private levelId!: string;
 
   // Estado del juego
   private symptoms: Symptom[] = [];
