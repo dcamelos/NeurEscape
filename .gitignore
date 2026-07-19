@@ -1,0 +1,36 @@
+# Dependencias (pnpm / npm / yarn)
+node_modules/
+.pnpm-debug.log*
+
+# Compilación de Next.js
+.next/
+out/
+
+# Producción / Logs
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variables de entorno (Secretos)
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.local.sample
+
+# Pruebas y Cobertura
+coverage/
+.nyc_output/
+
+# Herramientas de Next.js / Telemetría
+.next/trace
+
+# Archivos del sistema operativo / IDEs
+.DS_Store
+*.pem
+.vscode/
+.idea/
+.vimspector.json
