@@ -1,3 +1,4 @@
+/**
  * BrainMap — Interactive SVG brain with 5 clickable/droppable regions.
  * Rendered as a Phaser GameObject using SVG zones mapped to polygon hit areas.
  * Each region corresponds to clinical neuroanatomy (Sandrone & Carlson, 2021).
