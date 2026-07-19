@@ -8,11 +8,11 @@ import { getExportUrl } from "@/lib/analytics/logger";
  * Shows what the player got right/wrong and offers JSON export for research.
  */
 export default class ResultScene extends Phaser.Scene {
-  private levelData: any;
-  private levelId: string;
-  private success: boolean;
-  private timeRemaining: number;
-  private hintsUsed: number;
+  private levelData!: any;
+  private levelId!: string;
+  private success!: boolean;
+  private timeRemaining!: number;
+  private hintsUsed!: number;
   private placedCount: number;
   private totalSymptoms: number;
 
